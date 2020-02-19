@@ -9,27 +9,26 @@ import {
   Button,
 } from 'react-native';
 
-export function Login({navigation}) {
+export default function Registro({navigation}) {
   return (
     <View style={styles.container}>
+      <TextInput style={styles.input} placeholder="Usuário" />
       <TextInput style={styles.input} placeholder="Email" />
       <TextInput
         style={styles.input}
         secureTextEntry={true}
         placeholder="Senha"
       />
+      <TextInput
+        style={styles.input}
+        secureTextEntry={true}
+        placeholder="Confirmar Senha"
+      />
       <TouchableOpacity
         style={styles.botao}
         onPress={() => Alert.alert('FUNCIONA!!!', 'Você clicou no botão')}>
-        <Text style={styles.botaoText}>Login</Text>
+        <Text style={styles.botaoText}>Registrar</Text>
       </TouchableOpacity>
-      <View style={{marginTop: 200}}>
-        <Text style={{color: '#eee', marginBottom: 2}}>Faça seu cadastro!</Text>
-        <Button
-          title="Cadastrar"
-          onPress={() => navigation.navigate('Registro')}
-        />
-      </View>
     </View>
   );
 }
@@ -65,5 +64,3 @@ const styles = StyleSheet.create({
     color: '#222',
   },
 });
-
-export default Login;

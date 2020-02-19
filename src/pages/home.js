@@ -1,11 +1,25 @@
 import React from 'react';
-import {StyleSheet, View, Text, Button, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, Button} from 'react-native';
 
 export default function Home({navigation}) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Bem vindo ao CRUD, faça o login!</Text>
-      <Button title="Login" onPress={() => navigation.navigate('Login')} />
+      <Text style={styles.text}>Bem vindo ao App</Text>
+      <View style={{flexDirection: 'row'}}>
+        <View style={styles.botao}>
+          <Button
+            color="#000"
+            title="Login"
+            onPress={() => navigation.navigate('Login')}
+          />
+        </View>
+        <View style={styles.botao}>
+          <Button
+            title="Registrar"
+            onPress={() => navigation.navigate('Registro')}
+          />
+        </View>
+      </View>
     </View>
   );
 }
@@ -26,5 +40,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     borderRadius: 3,
   },
-  text: {fontSize: 30, color: '#FFF'},
+  botao: {margin: 10},
+  text: {fontSize: 30, color: '#FFF', marginBottom: 50},
 });
